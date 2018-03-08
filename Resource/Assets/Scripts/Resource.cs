@@ -10,7 +10,7 @@ public class Resource : MonoBehaviour {
     public int StartingAmount;
     public UnityEvent OnValueChanged;
 
-    private void Awake()
+    private void Start()
     {
         Amount = StartingAmount;
     }
@@ -25,6 +25,8 @@ public class Resource : MonoBehaviour {
         {
             Amount += amount;
         }
+        Debug.Log(Name + " plus: " + Amount);
+        UpdateUI();
     }
 
     public void RemoveAmount(int amount)
@@ -37,6 +39,8 @@ public class Resource : MonoBehaviour {
         {
             Amount -= amount;
         }
+        Debug.Log(Name + " minus: " + Amount);
+        UpdateUI();
     }
 
     public void UpdateUI()
