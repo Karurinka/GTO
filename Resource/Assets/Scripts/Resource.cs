@@ -13,6 +13,7 @@ public class Resource : MonoBehaviour {
     private void Start()
     {
         Amount = StartingAmount;
+        OnValueChanged = new UnityEvent();
     }
 
     public void AddAmount(int amount)
