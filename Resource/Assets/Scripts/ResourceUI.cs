@@ -6,8 +6,8 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Resource))]
 public class ResourceUI : MonoBehaviour {
 
-    public Text Value;
     public Text Label;
+    public Text Value;
 
     private Resource resource;
 
