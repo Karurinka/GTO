@@ -25,7 +25,6 @@ public class Resource : MonoBehaviour {
         {
             Amount += amount;
         }
-        Debug.Log(Name + " plus: " + Amount);
         UpdateUI();
     }
 
@@ -39,7 +38,6 @@ public class Resource : MonoBehaviour {
         {
             Amount -= amount;
         }
-        Debug.Log(Name + " minus: " + Amount);
         UpdateUI();
     }
 
