@@ -348,6 +348,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0.081, y: 0.094000004, z: 0.31500003}
+--- !u!1 &640524094 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1399568504575334, guid: 1a20c504c0da2d7418f88493899946fa,
+    type: 2}
+  m_PrefabInternal: {fileID: 1347796013}
+--- !u!114 &640524095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 640524094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a91af5db22b83ea448b32586a856b580, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dashcd: 0
+  hits: 0
+--- !u!114 &640524096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 640524094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5235122b805ecbc4b9d07a59e7c9e045, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  life: 10
 --- !u!1 &971891337
 GameObject:
   m_ObjectHideFlags: 0
@@ -432,6 +462,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1117714937 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1399568504575334, guid: 1a20c504c0da2d7418f88493899946fa,
+    type: 2}
+  m_PrefabInternal: {fileID: 1987299198}
+--- !u!114 &1117714938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1117714937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5235122b805ecbc4b9d07a59e7c9e045, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  life: 10
 --- !u!1 &1266146489
 GameObject:
   m_ObjectHideFlags: 0
@@ -552,9 +599,65 @@ Prefab:
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 1399568504575334, guid: 1a20c504c0da2d7418f88493899946fa, type: 2}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 54868719539720328, guid: 1a20c504c0da2d7418f88493899946fa,
+        type: 2}
+      propertyPath: m_Constraints
+      value: 120
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 114250098778609360, guid: 1a20c504c0da2d7418f88493899946fa, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 1a20c504c0da2d7418f88493899946fa, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1496189811
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1496189813}
+  - component: {fileID: 1496189812}
+  m_Layer: 0
+  m_Name: Skillfactory
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1496189812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1496189811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5539be2b299af542aedf53711fc7909, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skills:
+  - {fileID: 1157264209138450, guid: e5336e1452c5e1e4b9ecffb2e36d1303, type: 2}
+  - {fileID: 1985804782743686, guid: e6a6e4c1eee57ad40b05e885acb2d901, type: 2}
+  players:
+  - {fileID: 640524094}
+  - {fileID: 1117714937}
+--- !u!4 &1496189813
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1496189811}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.39, y: 0.66, z: -2.49}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1731019344
 GameObject:
   m_ObjectHideFlags: 0
@@ -767,6 +870,15 @@ Prefab:
     - target: {fileID: 1399568504575334, guid: 1a20c504c0da2d7418f88493899946fa, type: 2}
       propertyPath: m_Name
       value: Capsule (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 54868719539720328, guid: 1a20c504c0da2d7418f88493899946fa,
+        type: 2}
+      propertyPath: m_Constraints
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 1399568504575334, guid: 1a20c504c0da2d7418f88493899946fa, type: 2}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1a20c504c0da2d7418f88493899946fa, type: 2}

@@ -7,7 +7,7 @@ public class MoveScript : MonoBehaviour
 
     private Rigidbody rbody;
     public float dashcd;
-
+    public int hits;
 	// Use this for initialization
 	void Start ()
 	{
