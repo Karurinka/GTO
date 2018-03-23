@@ -14,6 +14,6 @@ public class moveBlast : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-	    rbody.velocity = new Vector3(2,0,0);
+	    rbody.velocity = new Vector3(3,0,0);
 	}
 }

@@ -32,7 +32,7 @@ public class move2Script : MonoBehaviour
             {
                 rbody.velocity = new Vector3(rbody.velocity.x, 10, 0);
             }
-            if (Input.GetKey(KeyCode.B) && dashcd <= 0)
+            if (Input.GetKey(KeyCode.H) && dashcd <= 0)
             {
                 rbody.velocity = new Vector3(rbody.velocity.x * 3, 1, 0);
                 dashcd = 0.5f;
