@@ -6,7 +6,8 @@ public class move2Script : MonoBehaviour
 {
 
     private Rigidbody rbody;
-    public float dashcd;
+    public float dashCd;
+    public float dashDuration;
     public int hits;
 
     // Use this for initialization
@@ -18,7 +19,7 @@ public class move2Script : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (dashcd <= 0)
+        if (dashDuration <= 0)
         {
             if (Input.GetKey(KeyCode.J))
             {
@@ -32,19 +33,28 @@ public class move2Script : MonoBehaviour
             {
                 rbody.velocity = new Vector3(rbody.velocity.x, 10, 0);
             }
-            if (Input.GetKey(KeyCode.H) && dashcd <= 0)
+            if (Input.GetKey(KeyCode.H) && dashCd <= 0)
             {
                 rbody.velocity = new Vector3(rbody.velocity.x * 3, 1, 0);
-                dashcd = 0.5f;
+                dashDuration = 0.2f;
+                dashCd = 1f;
+            }
+            if (Input.GetKey(KeyCode.K))
+            {
+                rbody.velocity = new Vector3(rbody.velocity.x, rbody.velocity.y - 0.5f, 0);
             }
         }
-        if (dashcd > 0)
+        if (dashDuration > 0)
         {
-            dashcd = dashcd - Time.deltaTime;
-            if (dashcd <= 0)
+            dashDuration = dashDuration - Time.deltaTime;
+            if (dashDuration <= 0)
             {
                 rbody.velocity = new Vector3();
             }
+        }
+        if (dashCd > 0)
+        {
+            dashCd = dashCd - Time.deltaTime;
         }
     }
 }

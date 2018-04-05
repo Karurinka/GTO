@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,7 +7,8 @@ public class MoveScript : MonoBehaviour
 {
 
     private Rigidbody rbody;
-    public float dashcd;
+    public float dashDuration;
+    public float dashCd;
     public int hits;
 	// Use this for initialization
 	void Start ()
@@ -16,7 +18,7 @@ public class MoveScript : MonoBehaviour
 	
 	// Update is called once per frame
 	void Update () {
-	    if (dashcd <= 0)
+	    if (dashDuration <= 0)
 	    {
             if (Input.GetKey(KeyCode.A))
             {
@@ -30,19 +32,30 @@ public class MoveScript : MonoBehaviour
             {
                 rbody.velocity = new Vector3(rbody.velocity.x, 10, 0);
             }
-            if (Input.GetKey(KeyCode.LeftShift) && dashcd <= 0)
+            if (Input.GetKey(KeyCode.LeftShift) && dashCd <= 0)
             {
                 rbody.velocity = new Vector3(rbody.velocity.x * 3, 1, 0);
-                dashcd = 0.5f;
+                dashDuration = 0.2f;
+                dashCd = 1f;
+            }
+	        if (Input.GetKey(KeyCode.S))
+	        {
+	            rbody.velocity = new Vector3(rbody.velocity.x,rbody.velocity.y - 0.5f,0);
+	        }
+        }
+        if (dashDuration > 0)
+        {
+            dashDuration = dashDuration - Time.deltaTime;
+            if (dashDuration <= 0)
+            {
+                rbody.velocity = new Vector3();
             }
         }
-	    if (dashcd > 0)
+	    if (dashCd > 0)
 	    {
-	        dashcd = dashcd - Time.deltaTime;
-	        if (dashcd <= 0)
-	        {
-	            rbody.velocity = new Vector3();
-	        }
-	    }
-	}
+            dashCd = dashCd - Time.deltaTime;
+        }
+
+
+    }
 }

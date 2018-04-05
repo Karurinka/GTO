@@ -25,7 +25,7 @@ public class skillsScript : MonoBehaviour
                 GameObject go;
                 go = Instantiate(skills[0]);
                 go.transform.SetParent(transform);
-                go.transform.position = new Vector3(1f, 1, -2.8f);
+                go.transform.position = new Vector3(0.5f, 1, -2.8f);
                 cooldown1 = 1f;
             }
             if (Input.GetKeyDown(KeyCode.R))
@@ -33,7 +33,7 @@ public class skillsScript : MonoBehaviour
                 GameObject go;
                 go = Instantiate(skills[0]);
                 go.transform.SetParent(transform);
-                go.transform.position = new Vector3(1f, 5f, -2.8f);
+                go.transform.position = new Vector3(0.5f, 4f, -2.8f);
                 cooldown1 = 1f;
             }
             if (Input.GetKeyDown(KeyCode.T))
@@ -44,6 +44,16 @@ public class skillsScript : MonoBehaviour
                 go.transform.position = new Vector3(players[1].transform.position.x, 10f, -3.0f);
                 cooldown1 = 0.8f;
             }
+            if (Input.GetKeyDown(KeyCode.Y))
+            {
+                GameObject go;
+                go = Instantiate(skills[2]);
+                go.transform.SetParent(transform);
+                go.transform.position = new Vector3(0.5f, 5f, -2.8f);
+                go.GetComponent<MoveBall>().setCode(KeyCode.Y);
+                cooldown1 = 1.0f;
+            }
+
         }
 	    if (cooldown2 <= 0)
 	    {
@@ -51,16 +61,16 @@ public class skillsScript : MonoBehaviour
             {
                 GameObject go;
                 go = Instantiate(skills[0]);
-                go.transform.SetParent(transform);
-                go.transform.position = new Vector3(-8, 1f, -2.6f);
+                go.transform.position = new Vector3(-10f, 1f, -2.6f);
                 cooldown2 = 1f;
+                
             }
             if (Input.GetKeyDown(KeyCode.O))
             {
                 GameObject go;
                 go = Instantiate(skills[0]);
                 go.transform.SetParent(transform);
-                go.transform.position = new Vector3(-8, 5f, -2.6f);
+                go.transform.position = new Vector3(-10f, 4f, -2.6f);
                 cooldown2 = 1f;
             }
             if (Input.GetKeyDown(KeyCode.P))
@@ -70,6 +80,15 @@ public class skillsScript : MonoBehaviour
                 go.transform.SetParent(transform);
                 go.transform.position = new Vector3(players[0].transform.position.x, 10f, -3.0f);
                 cooldown2 = 0.8f;
+            }
+            if (Input.GetKeyDown(KeyCode.M))
+            {
+                GameObject go;
+                go = Instantiate(skills[2]);
+                go.transform.SetParent(transform);
+                go.transform.position = new Vector3(-10f, 5f, -2.8f);
+                go.GetComponent<MoveBall>().setCode(KeyCode.M);
+                cooldown2 = 1.0f;
             }
 
         }
