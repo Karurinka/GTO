@@ -2,13 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class move2Script : MonoBehaviour
+public class Move2Script : MonoBehaviour
 {
 
     private Rigidbody rbody;
     public float dashCd;
     public float dashDuration;
-    public int hits;
 
     // Use this for initialization
     void Start()

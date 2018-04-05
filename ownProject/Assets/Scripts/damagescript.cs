@@ -24,7 +24,7 @@ public class damagescript : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            collision.gameObject.GetComponent<playerlife>().life--;
+            collision.gameObject.GetComponent<PlayerLife>().Life--;
             Destroy(this.gameObject);
         }
     }
