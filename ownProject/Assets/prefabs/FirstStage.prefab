@@ -80,7 +80,7 @@ GameObject:
   - component: {fileID: 114584709718220926}
   - component: {fileID: 114419506425320246}
   m_Layer: 0
-  m_Name: Capsule (1)
+  m_Name: Player2
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 114692265688300262}
   - component: {fileID: 114154217586523994}
   m_Layer: 0
-  m_Name: Capsule
+  m_Name: Player1
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -177,7 +177,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1737898177749614
 GameObject:
   m_ObjectHideFlags: 0
@@ -242,7 +242,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1969464599866320
 GameObject:
   m_ObjectHideFlags: 0
@@ -409,7 +409,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1190000761685592}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.48, y: 1.01, z: -0.3699999}
+  m_LocalPosition: {x: 9, y: 1.01, z: -0.3699999}
   m_LocalScale: {x: 0.48557103, y: 0.48557103, z: 0.48557103}
   m_Children: []
   m_Father: {fileID: 4362643519073386}
@@ -422,7 +422,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1653512770626862}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.532, y: 0.318, z: -0.3671944}
+  m_LocalPosition: {x: -0.532, y: -0, z: -0.3671944}
   m_LocalScale: {x: 0.46180886, y: 0.46180886, z: 0.46180886}
   m_Children: []
   m_Father: {fileID: 4362643519073386}
@@ -448,7 +448,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1545498262421338}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.95, y: 1.01, z: -0.3699999}
+  m_LocalPosition: {x: -0.93, y: 1.01, z: -0.3699999}
   m_LocalScale: {x: 0.48557103, y: 0.48557103, z: 0.48557103}
   m_Children: []
   m_Father: {fileID: 4362643519073386}
@@ -978,7 +978,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5235122b805ecbc4b9d07a59e7c9e045, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Life: 10
+  Life: 5
 --- !u!114 &114160629513213034
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1002,7 +1002,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5235122b805ecbc4b9d07a59e7c9e045, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Life: 10
+  Life: 5
 --- !u!114 &114450347585640424
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1073,6 +1073,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerOne: {fileID: 1545498262421338}
   PlayerTwo: {fileID: 1190000761685592}
+  PlayerOneCube: {fileID: 0}
+  PlayerTwoCube: {fileID: 0}
+  SkillFactory: {fileID: 1737898177749614}
 --- !u!124 &124587887896575300
 Behaviour:
   m_ObjectHideFlags: 1

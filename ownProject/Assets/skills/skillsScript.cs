@@ -59,7 +59,6 @@ public class skillsScript : MonoBehaviour
 	            }
 
 	        }
-
 	    }
 	    if (turn.playerOneTurn)
 	    {
