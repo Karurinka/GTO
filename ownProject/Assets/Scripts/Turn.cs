@@ -2,6 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Turn : MonoBehaviour
 {
@@ -17,20 +19,22 @@ public class Turn : MonoBehaviour
 
     public GameObject SkillFactory;
 
+    public Text CountdownText;
+
     private MoveScript playerOneMovement;
     private Move2Script playerTwoMovement;
 
     private PlayerLife playerOneLife;
     private PlayerLife playerTwoLife;
 
-    public bool playerOneTurn { get; set; }
-    public bool playerTwoTurn { get; set; }
+    public bool PlayerOneTurn { get; set; }
+    public bool PlayerTwoTurn { get; set; }
 
     //methods
     public void Start()
     {
-        playerOneTurn = true;
-        playerTwoTurn = false;
+        PlayerOneTurn = true;
+        PlayerTwoTurn = false;
 
         //getting movement and skill scripts
         playerOneMovement = PlayerOne.GetComponent<MoveScript>();
@@ -51,8 +55,9 @@ public class Turn : MonoBehaviour
             PlayerOne.SetActive(false);
             PlayerTwo.SetActive(false);
             print("Game Ovar");
-            
+
             // go to a game over screen
+            SceneManager.LoadScene("Game_Over_Screen");
         }
     }
 
@@ -60,40 +65,52 @@ public class Turn : MonoBehaviour
     {
         while (playerOneLife.getAlive() || playerTwoLife.getAlive())
         {
-            while (playerOneTurn)
+            while (PlayerOneTurn)
             {
-                print("P1");
+
+                // restrict the movement of player two
+                // active the movement of player one
                 playerOneMovement.enabled = true;
                 playerTwoMovement.enabled = false;
+
                 PlayerOneCube.SetActive(true);
                 PlayerTwoCube.SetActive(false);
                 PlayerOne.SetActive(true);
                 PlayerTwo.SetActive(false);
 
+                StartCoroutine(Countdown());
                 yield return new WaitForSecondsRealtime(15);
-
-                playerTwoTurn = true;
-                playerOneTurn = false;
+             
+                PlayerTwoTurn = true;
+                PlayerOneTurn = false;
+                // deletes all the children of the skillfactory
+                // so that the skills dissapear when the turn switches
                 foreach (Transform child in SkillFactory.transform)
                 {
                     GameObject.Destroy(child.gameObject);
                 }
             }
 
-            while (playerTwoTurn)
+            while (PlayerTwoTurn)
             {
-                print("P2");
+                // restrict the movement of player one
+                // active the movement of player two
                 playerOneMovement.enabled = false;
                 playerTwoMovement.enabled = true;
+
                 PlayerOne.SetActive(false);
                 PlayerTwo.SetActive(true);
                 PlayerOneCube.SetActive(false);
                 PlayerTwoCube.SetActive(true);
 
+                StartCoroutine(Countdown());
                 yield return new WaitForSecondsRealtime(15);
 
-                playerTwoTurn = false;
-                playerOneTurn = true;
+                PlayerTwoTurn = false;
+                PlayerOneTurn = true;
+
+                // deletes all the children of the skillfactory
+                // so that the skills dissapear when the turn switches
                 foreach (Transform child in SkillFactory.transform)
                 {
                     GameObject.Destroy(child.gameObject);
@@ -101,4 +118,23 @@ public class Turn : MonoBehaviour
             }
         }
     }
+    private IEnumerator Countdown()
+    {
+        float duration = 15f; // 3 seconds you can change this to
+                             //to whatever you want
+        float totalTime = 0;
+        while (totalTime <= duration)
+        {
+            totalTime += Time.deltaTime;
+            var integer = (int)totalTime; // choose how to quantize this */
+                                          // convert integer to string and assign to text */
+
+
+            CountdownText.text = Convert.ToString(Math.Floor(totalTime));
+            print(CountdownText.text);
+            yield return null;
+        }
+    }
+
+
 }

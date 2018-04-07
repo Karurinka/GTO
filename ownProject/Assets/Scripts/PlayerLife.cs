@@ -1,11 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerLife : MonoBehaviour
 {
-    public int Life = 10;
+    public int Life;
+    public Slider HealthSlider;
 
+    private int currentHealth;
     private bool alive = true;
 
     public bool getAlive()
@@ -17,20 +20,31 @@ public class PlayerLife : MonoBehaviour
     void Start()
     {
         alive = true;
+        currentHealth = Life;
+        HealthSlider.maxValue = currentHealth;
+        HealthSlider.value = HealthSlider.maxValue;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        if (Life <= 0)
+        if (currentHealth <= 0)
         {
+            alive = false;
             this.gameObject.SetActive(false);
             print("Oh no " + this + " has died");
-            alive = false;
         }
-        else if(Life > 0)
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "DamageSkill")
         {
-            alive = true;
+            if (currentHealth >= 1)
+            {
+                alive = true;
+                currentHealth -= 1;
+                HealthSlider.value = currentHealth;
+            }
         }
     }
 }

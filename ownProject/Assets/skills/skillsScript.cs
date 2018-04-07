@@ -20,7 +20,7 @@ public class skillsScript : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-	    if (turn.playerTwoTurn)
+	    if (turn.PlayerTwoTurn)
 	    {
 	        if (cooldown1 <= 0)
 	        {
@@ -60,7 +60,7 @@ public class skillsScript : MonoBehaviour
 
 	        }
 	    }
-	    if (turn.playerOneTurn)
+	    if (turn.PlayerOneTurn)
 	    {
 	        if (cooldown2 <= 0)
 	        {
