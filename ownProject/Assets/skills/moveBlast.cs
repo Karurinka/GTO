@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class moveBlast : MonoBehaviour
+public class MoveBlast : MonoBehaviour
 {
     private Rigidbody rbody;
     private bool move;

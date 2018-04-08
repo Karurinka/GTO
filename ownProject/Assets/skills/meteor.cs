@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class meteor : MonoBehaviour {
+public class Meteor : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {

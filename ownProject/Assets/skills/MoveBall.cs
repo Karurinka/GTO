@@ -38,8 +38,6 @@ public class MoveBall : MonoBehaviour
                 rbody.velocity = new Vector3(2f, 5f, 0);
             }
         }
-
-
 	}
 
     public void setCode(KeyCode code)

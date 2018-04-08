@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class skillsScript : MonoBehaviour
+public class SkillsScript : MonoBehaviour
 {
 
     public GameObject[] skills;
