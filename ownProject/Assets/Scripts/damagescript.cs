@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DamageScript : MonoBehaviour
+public class damagescript : MonoBehaviour
 {
 
     public float DestroyTime = 2f;
